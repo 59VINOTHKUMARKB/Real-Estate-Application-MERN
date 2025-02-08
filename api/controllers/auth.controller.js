@@ -2,7 +2,7 @@ import bcrypt from "bcrypt"
 import jwt from "jsonwebtoken"
 import prisma from "../lib/prisma.js";
 
-export const register =async (req,res)=>{
+export const register = async (req,res)=>{
     try{
     const {username,email,password} = req.body;
     const hashedpassword=await bcrypt.hash(password,10);
